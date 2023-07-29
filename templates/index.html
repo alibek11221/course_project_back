@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Загрузка</title>
+</head>
+<body>
+<div class="container">
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <h4>Урок</h4>
+            <div class="input-group input-group-icon">
+                <select name="lesson">
+                    <option selected disabled hidden=""></option>
+                    <option value="1">Задание 1</option>
+                    <option value="2">Задание 2</option>
+                    <option value="2">Задание 3</option>
+                    <option value="2">Задание 4</option>
+                </select>
+            </div>
+
+            <h4>Фамилия имя</h4>
+            <div class="input-group input-group-icon">
+                <input name="name" type="text" placeholder="Фамилия Имя"/>
+                <div class="input-icon"><i class="fa fa-user"></i></div>
+            </div>
+
+            <h4>Файл</h4>
+            <div class="input-group input-group-icon">
+                <input type="file" name="file" id="file" accept=".zip,.tar,application/zip,application/x-tar, .rar">
+                <div class="input-icon"><i class="fa fa-envelope"></i></div>
+            </div>
+        </div>
+        <button type="submit">Отправить</button>
+        <h4>{{.message}}</h4>
+    </form>
+</div>
+</body>
+</html>
